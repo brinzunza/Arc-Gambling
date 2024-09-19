@@ -1,4 +1,4 @@
-# Arc Gambling
+# Arc Gambling (https://arcgambling.netlify.app/)
 
 This is a simple interactive gambling game built using D3.js for visualizations. The user starts with 10,000 points and can bet points on a section of the arc. If the spinning arc lands in the user's selected range, they win; otherwise, they lose the bet.
 
