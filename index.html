@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arc Gambling</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        svg {
+            display: block;
+            margin: auto;
+        }
+        .points-display, .results-display {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Arc Gambling</h1>
+    
+    <!-- User inputs for game parameters -->
+    <label for="startAngle">Start Angle (0-360):</label>
+    <input type="number" id="startAngle" min="0" max="360" value="0"><br>
+
+    <label for="endAngle">End Angle (0-360):</label>
+    <input type="number" id="endAngle" min="0" max="360" value="90"><br>
+
+    <label for="betAmount">Bet Amount:</label>
+    <input type="number" id="betAmount" value="100"><br>
+
+    <!-- Buttons to start and pause the game -->
+    <button id="startGame">Start Game</button>
+    <button id="stopGame">Pause Game</button>
+
+    <!-- Points display (this will be updated by the script) -->
+    <div class="points-display"></div>
+
+    <!-- Results display (this will show the result of each bet) -->
+    <div class="results-display"></div>
+</body>
+</html>
