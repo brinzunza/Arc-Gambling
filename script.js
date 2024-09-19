@@ -38,7 +38,7 @@ const background = g.append("path")
 // Add the foreground arc (dynamic)
 const foreground = g.append("path")
     .datum({ endAngle: 0 })
-    .style("fill", "orange")
+    .style("fill", "lightgreen")
     .attr("d", arc);
 
 // Display user points
@@ -63,13 +63,13 @@ function checkWin(currentAngle) {
 
     // Check if the current angle is within the user's selected range
     if (currentDegree >= selectedStartAngle && currentDegree <= selectedEndAngle) {
-        const winRatio = 1 - (selectedEndAngle - selectedStartAngle) / 360;
-        const winAmount = userBet * winRatio;
+        const winRatio = 360 / (selectedEndAngle - selectedStartAngle);
+        const winAmount = userBet * (winRatio) - userBet;
         userPoints += winAmount; // Add the winnings to the user's points
-        resultsDisplay.text(`You won! You earned ${winAmount.toFixed(2)} points.`);
+        resultsDisplay.text(`You won! +${winAmount.toFixed(2)} points.`);
     } else {
         userPoints -= userBet; // Subtract the bet amount from the user's points
-        resultsDisplay.text(`You lost! You lost ${userBet} points.`);
+        resultsDisplay.text(`You lost! -${userBet} points.`);
     }
 
     // Update the displayed points
@@ -137,3 +137,4 @@ document.getElementById("stopGame").addEventListener("click", function() {
 
 // Initialize game paused
 stopGame();
+
